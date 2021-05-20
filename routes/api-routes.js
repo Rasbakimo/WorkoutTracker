@@ -37,8 +37,10 @@ module.exports = (app) => {
 
             {$push: {exercises: req.body}},
             {new: true, runValidators: true})
-            
-        .then(data => res.json(data))
+            .then(data => {
+            console.log(data);
+            res.json(data)
+        })
 
         .catch(err => {
 
